@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .board {
+    border: 6px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cell {
+    width: 150px;
+    height: 150px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cell.x span {
+    opacity: 1;
+  }
+  
+  .cell:hover {
+    background-color: #f2f3f4;
+  }
+  
+  .cell.x {
+    color: #e74c3c;
+  }
+  
+  .cell.o {
+    color: #3498db;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
