@@ -17,13 +17,13 @@ export class BoardComponent implements OnInit {
   change(cell: number): any {
     console.log(this.playerNum);
 
-    if (this.board[cell/3][cell%3] !== "") {
+    if (this.board[Math.floor(cell/3)][cell%3] !== "") {
       // TODO: error animation, allow player to choose a different square
     }
     // Changing the values of the cells locally. This will be a backend service.
     else {
-      if (this.playerNum === 1) this.board[cell/3][cell%3] = "X";
-      else if (this.playerNum === -1) this.board[cell/3][cell%3] = "O";
+      if (this.playerNum === 1) this.board[Math.floor(cell/3)][cell%3] = "X";
+      else if (this.playerNum === -1) this.board[Math.floor(cell/3)][cell%3] = "O";
       
       // check for a winner
       const isX = (val: string) => val === "X";
